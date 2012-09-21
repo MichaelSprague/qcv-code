@@ -1,0 +1,20 @@
+syntax: glob
+
+*~
+*.orig
+ui_*
+TAGS
+moc
+*.o
+*.so
+build
+CMakeCache.txt
+cmake.check_cache
+out
+Makefile
+ignore
+
+glob:*.vtg
+glob:*.vpw
+glob:*.vpj
+glob:*.vpwhistu
