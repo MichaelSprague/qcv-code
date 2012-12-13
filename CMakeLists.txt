@@ -29,7 +29,12 @@ set(QT_USE_QTXML true)
 #OpenCV
 find_package ( OpenCV REQUIRED )
 
+find_package( GLUT  REQUIRED )
+
+find_package( GL REQUIRED )
+
 find_package( QGLViewer  )
+
 
 # Include directories before QGLViewer otherwise headers will be found first in 
 # QGLViewer directory (for example camera.h).
@@ -184,19 +189,18 @@ QT4_ADD_RESOURCES(QT_RCC_SRCS ${QT_RCCS})
 
 add_definitions(${QT_DEFINITIONS})
 
-include_directories ( ${CMAKE_CURRENT_BINARY_DIR} ${OPT_INCLUDES})
+include_directories ( ${CMAKE_CURRENT_BINARY_DIR} ${OPT_INCLUDES} "{GLUT_INCLUDE_DIR}" "c:\users\hbadino\projects\freeglut-2.8.0\include")
 
 ### Generated library
 add_library ( qcv SHARED ${LIBQCV_SRC} ${QT_RCC_SRCS}
                          ${LIBQCV_HEADERS_MOC}
 			 )
 target_link_libraries(qcv  ${QT_LIBRARIES} 
-                           -lglut -lGL ${OpenCV_LIBS}
-                           ${OPT_LIBRARIES} )
+                           ${GLUT_LIBRARY} ${GL_LIBRARY} ${OpenCV_LIBS} ${OPT_LIBRARIES} )
 
 
 ### Set library to be installed under lib directory
-install ( TARGETS qcv LIBRARY DESTINATION lib)
+#install ( TARGETS qcv LIBRARY DESTINATION lib)
 
 ### Set header to be installed under include/qcv
 install (FILES ${LIBQCV_HEADERS} DESTINATION include/qcv )

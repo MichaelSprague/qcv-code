@@ -28,6 +28,10 @@
 ******************************************************************************/
 
 /* INCLUDES */
+#ifdef WIN32
+#include <ciso646>
+#endif
+
 #include <QDir>
 #include <QTimer>
 #include <highgui.h>
@@ -435,7 +439,7 @@ CSeqDevHDImg::registerOutputs (
 
     char txt[256];
     
-    for ( uint8_t i = 0 ; i < m_imageData_v.size() ; ++i)
+    for ( int i = 0 ; i < m_imageData_v.size() ; ++i)
     {
         sprintf(txt, "Image %i", i);
         fr_map[txt] = new CIO<cv::Mat>(&m_imageData_v[i].image);

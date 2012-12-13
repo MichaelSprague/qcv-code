@@ -82,13 +82,15 @@ CEnumParameter<_EnumType>::setValueFromString ( std::string f_val_str )
     const char* begin_p = f_val_str.c_str();
     char* end_p   = NULL;
     errno = 0;
-    double val_d = strtod ( begin_p, &end_p );
+    int val_i = strtol ( begin_p, &end_p, 0 );
     
     if ( end_p != begin_p && 
-         std::isfinite(val_d) &&
+#ifndef WIN32
+		isfinite(val_d) &&
+#endif
          !errno )
     {
-        m_value_e = (_EnumType)val_d;
+        m_value_e = static_cast< _EnumType >(val_i);
         CParameter::updateInitialValue();
         return update();
     }

@@ -27,12 +27,20 @@
 *****             (C) Hernan Badino 2012 - All Rights Reserved            *****
 ******************************************************************************/
 
-#include "seqDevVideoCapture.h"
 
 /* INCLUDES */
+#ifdef WIN32
+#include <ciso646>
+#endif
+
+#include "seqDevVideoCapture.h"
+
 #include <QDir>
 #include <QTimer>
+
+#ifndef WIN32
 #include <sys/time.h>
+#endif
 
 using namespace QCV;
 
@@ -208,7 +216,7 @@ bool CSeqDevVideoCapture::registerOutputs (
 
     char txt[256];
     
-    for ( uint8_t i = 0 ; i < m_imageData_v.size() ; ++i)
+    for ( int i = 0 ; i < m_imageData_v.size() ; ++i)
     {
         sprintf(txt, "Image %i", i);
         fr_map[txt] = new CIO<cv::Mat>(&m_imageData_v[i].image);

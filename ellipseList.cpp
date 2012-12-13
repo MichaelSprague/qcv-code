@@ -28,6 +28,10 @@
  ******************************************************************************/
 
 /* INCLUDES */
+#ifdef WIN32
+#define _USE_MATH_DEFINES
+#endif
+
 #include "ellipseList.h"
 
 #include "glheader.h"

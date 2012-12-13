@@ -80,7 +80,9 @@ CUIntParameter::setValueFromString ( std::string f_val_str )
     double val_d = strtod ( begin_p, &end_p );
     
     if ( end_p != begin_p && 
-         isfinite(val_d) &&
+#ifndef WIN32
+		isfinite(val_d) &&
+#endif
          !errno &&
          val_d >=0 )
     {

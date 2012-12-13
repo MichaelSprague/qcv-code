@@ -27,6 +27,11 @@
  ******************************************************************************/
 
 /* INCLUDES */
+
+#ifdef WIN32
+#include <ciso646>
+#endif
+
 #include <QCheckBox>
 
 #include "clockTreeItemModel.h"

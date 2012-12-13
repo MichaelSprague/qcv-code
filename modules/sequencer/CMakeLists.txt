@@ -93,14 +93,14 @@ add_library ( qcvsequencer SHARED ${LIBQCVSequencer_SRC}
                            ${LIBQCVSequencer_HEADERS_MOC} )
 
 target_link_libraries(qcvsequencer  ${QT_LIBRARIES} 
-                                      -lglut -lGL ${OpenCV_LIBS})
+${OpenCV_LIBS})
 
 ### Set library to be installed under lib directory
-install ( TARGETS qcvsequencer LIBRARY DESTINATION lib)
+#install ( TARGETS qcvsequencer LIBRARY DESTINATION lib)
 
 ### Set header to be installed under include/qcv
 install (FILES ${LIBQCVSequencer_HEADERS} DESTINATION include/qcv/sequencer )
 
 #####################################
 
-install(FILES DESTINATION bin/ PERMISSIONS OWNER_WRITE OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+#install(FILES DESTINATION bin/ PERMISSIONS OWNER_WRITE OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)

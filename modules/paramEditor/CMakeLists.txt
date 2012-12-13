@@ -187,14 +187,14 @@ add_library ( qcvpeditor SHARED ${LIBQCVParamEditor_SRC}
                           )
 
 target_link_libraries(qcvpeditor  ${QT_LIBRARIES} 
-                                      -lglut -lGL ${OpenCV_LIBS})
+${OpenCV_LIBS})
 
 ### Set library to be installed under lib directory
-install ( TARGETS qcvpeditor LIBRARY DESTINATION lib)
+#install ( TARGETS qcvpeditor LIBRARY DESTINATION lib)
 
 ### Set header to be installed under include/qcv
 install (FILES ${LIBQCVParamEditor_HEADERS} DESTINATION include/qcv/paramEditor )
 
 #####################################
 
-install(FILES DESTINATION bin/ PERMISSIONS OWNER_WRITE OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+#install(FILES DESTINATION bin/ PERMISSIONS OWNER_WRITE OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)

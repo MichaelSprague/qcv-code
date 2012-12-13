@@ -28,11 +28,14 @@
  ******************************************************************************/
 
 /* INCLUDES */
+#ifdef WIN32
+#define rand random
+#include "GL/glut.h"
+#endif
 
 #include <QtGui>
 #include <QtOpenGL>
 #include <QGLContext>
-#include <GL/glut.h>
 
 #include "display.h"
 #include "displayTreeNode.h"

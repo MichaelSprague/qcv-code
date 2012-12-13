@@ -28,6 +28,10 @@
 ******************************************************************************/
 
 /* INCLUDES */
+#ifdef WIN32
+#include <ciso646>
+#endif
+
 #include "node.h"
 #include "drawingListHandler.h"
 #include "displayTreeNode.h"

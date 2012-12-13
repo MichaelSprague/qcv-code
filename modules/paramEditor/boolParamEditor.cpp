@@ -51,7 +51,7 @@ CBoolParameterEditor::CBoolParameterEditor( CBoolParameter *  f_parameter_p,
     layout_p -> setMargin( 0 );    
     layout_p -> addWidget( m_qcb_p );
     
-    if ( not f_parameter_p ->getComment().empty() )
+    if ( ! f_parameter_p ->getComment().empty() )
         m_qcb_p -> setToolTip ( QString(f_parameter_p ->getComment().c_str() ) );
     
     connect( m_qcb_p,   SIGNAL( toggled(     bool ) ),

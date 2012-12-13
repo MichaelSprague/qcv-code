@@ -32,6 +32,11 @@
  *******************************************************************************/
 
 /* INCLUDES */
+#ifdef WIN32
+#define _USE_MATH_DEFINES
+#define rand random
+#endif
+
 #include "houghTransformOp.h"
 #include "drawingList.h"
 #include "ceParameter.h"

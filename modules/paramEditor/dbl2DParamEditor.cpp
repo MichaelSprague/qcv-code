@@ -29,6 +29,10 @@
  ******************************************************************************/
 
 /* INCLUDES */
+#ifdef WIN32
+#include <ciso646>
+#endif
+
 #include "dbl2DParamEditor.h"
 
 #include <QLabel>
