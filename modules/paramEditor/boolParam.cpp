@@ -92,7 +92,9 @@ CBoolParameter::setValueFromString ( std::string f_val_str )
         
         if ( end_p != begin_p )
         {
+#ifndef WIN32
             if ( isfinite(val_d) )
+#endif
             {
                 /// True value is not only assign if val_d has non-zero value but also
                 /// if it has non-zero value and errno indicates over/under-flow

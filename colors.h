@@ -31,8 +31,17 @@
  ******************************************************************************/
 
 /* INCLUDES */
+
 #include <algorithm>
+#ifdef WIN32
+#include <stdint.h>
+typedef uint8_t u_int8_t;
+typedef uint16_t u_int16_t;
+typedef uint32_t u_int32_t;
+#else
 #include <inttypes.h>
+#endif
+
 #include <cv.h>
 
 /* CONSTANTS */
@@ -50,10 +59,10 @@ namespace QCV
                 const int f_b_i, 
                 const int f_a_i = 255 )
         {
-            r = std::max(std::min(255, f_r_i), 0);
-            g = std::max(std::min(255, f_g_i), 0);
-            b = std::max(std::min(255, f_b_i), 0);
-            a = std::max(std::min(255, f_a_i), 0);
+            r = ((std::max))((std::min)(255, f_r_i), 0);
+            g = ((std::max))((std::min)(255, f_g_i), 0);
+            b = ((std::max))((std::min)(255, f_b_i), 0);
+            a = ((std::max))((std::min)(255, f_a_i), 0);
         }
         
         SRgba ( const SRgb & other,
@@ -88,10 +97,10 @@ namespace QCV
                     const int f_b_i, 
                     const int f_a_i = 255 )
         {
-            r = std::max(std::min(255, f_r_i), 0);
-            g = std::max(std::min(255, f_g_i), 0);
-            b = std::max(std::min(255, f_b_i), 0);
-            a = std::max(std::min(255, f_a_i), 0);
+            r = (std::max)((std::min)(255, f_r_i), 0);
+            g = (std::max)((std::min)(255, f_g_i), 0);
+            b = (std::max)((std::min)(255, f_b_i), 0);
+            a = (std::max)((std::min)(255, f_a_i), 0);
         }
 
         const SRgba& operator =  ( const SRgb & other );
@@ -142,9 +151,9 @@ namespace QCV
                const int f_g_i, 
                const int f_b_i )
         {
-            r = std::max(std::min(255, f_r_i), 0);
-            g = std::max(std::min(255, f_g_i), 0);
-            b = std::max(std::min(255, f_b_i), 0);
+            r = (std::max)((std::min)(255, f_r_i), 0);
+            g = (std::max)((std::min)(255, f_g_i), 0);
+            b = (std::max)((std::min)(255, f_b_i), 0);
         }
 
         SRgb ( uint8_t f_r_8ui,
@@ -203,9 +212,9 @@ namespace QCV
                     const int f_b_i )
             
         {
-            r = std::max(std::min(255, f_r_i), 0);
-            g = std::max(std::min(255, f_g_i), 0);
-            b = std::max(std::min(255, f_b_i), 0);
+            r = (std::max)((std::min)(255, f_r_i), 0);
+            g = (std::max)((std::min)(255, f_g_i), 0);
+            b = (std::max)((std::min)(255, f_b_i), 0);
         }
 
         union
@@ -266,8 +275,8 @@ namespace QCV
             else
                 h = f_h_f;
             
-            s = std::max(std::min(1.f, f_s_f), 0.f);
-            v = std::max(std::min(1.f, f_v_f), 0.f);
+            s = (std::max)((std::min)(1.f, f_s_f), 0.f);
+            v = (std::max)((std::min)(1.f, f_v_f), 0.f);
         }
         
         SHsv (cv::Vec3b f_other ) 
@@ -308,8 +317,8 @@ namespace QCV
              else
                 h = f_h_f;
                
-            s = std::max(std::min(1.f,   f_s_f), 0.f);
-            v = std::max(std::min(1.f,   f_v_f), 0.f);
+            s = (std::max)((std::min)(1.f,   f_s_f), 0.f);
+            v = (std::max)((std::min)(1.f,   f_v_f), 0.f);
         }
         
         float h;
@@ -336,8 +345,8 @@ namespace QCV
             else
                 h = f_h_f;
 
-            s = std::max(std::min(1.f,   f_s_f), 0.f);
-            l = std::max(std::min(1.f,   f_l_f), 0.f);
+            s = (std::max)((std::min)(1.f,   f_s_f), 0.f);
+            l = (std::max)((std::min)(1.f,   f_l_f), 0.f);
         }
         
         SHsl (cv::Vec3b f_other ) 
@@ -378,8 +387,8 @@ namespace QCV
             else
                 h = f_h_f;
 
-            s = std::max(std::min(1.f,   f_s_f), 0.f);
-            l = std::max(std::min(1.f,   f_l_f), 0.f);
+            s = (std::max)((std::min)(1.f,   f_s_f), 0.f);
+            l = (std::max)((std::min)(1.f,   f_l_f), 0.f);
         }
         
         float h;

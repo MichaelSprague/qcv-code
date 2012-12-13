@@ -39,6 +39,10 @@
  *******************************************************************************/
 
 /* INCLUDES */
+#ifdef WIN32
+#include <ciso646>
+#endif
+
 #include "parameter.h"
 #include "standardTypes.h"
 #include "int2DParam.h"
@@ -176,7 +180,7 @@ namespace QCV
         {
             //return ptr->updateFromContainer();
             
-            if ( not (ptr -> setValue ( param2, false ) ) )
+            if ( ! (ptr -> setValue ( param2, false ) ) )
                 return false;
         }
         return true;

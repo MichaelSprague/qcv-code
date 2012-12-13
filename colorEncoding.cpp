@@ -27,9 +27,14 @@
 *****             (C) Hernan Badino 2012 - All Rights Reserved            *****
 ******************************************************************************/
 
+#ifdef WIN32
+#define _USE_MATH_DEFINES
+#endif
+
 #include "colorEncoding.h"
 #include <math.h>
 #include <stdint.h>
+
 
 using namespace QCV;
 

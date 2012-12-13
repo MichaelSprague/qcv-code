@@ -55,7 +55,7 @@ CButtonParameterEditor::CButtonParameterEditor( CButtonParameter *  f_parameter_
     layout_p -> setMargin( 0 );    
     layout_p -> addWidget( m_qpb_p );
     
-    if ( not f_parameter_p ->getComment().empty() )
+    if ( ! f_parameter_p ->getComment().empty() )
     {
         m_qpb_p -> setToolTip ( QString(f_parameter_p ->getComment().c_str() ) );
         m_qpb_p -> setText    ( QString(f_parameter_p ->getName().c_str() ) );

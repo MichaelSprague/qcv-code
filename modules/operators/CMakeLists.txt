@@ -83,10 +83,10 @@ add_library ( qcvoperators SHARED ${LIBQCVOperators_SRC}
                            ${LIBQCVOperators_HEADERS_MOC} )
 
 target_link_libraries(qcvoperators  ${QT_LIBRARIES} 
-                                    -lglut -lGL ${OpenCV_LIBS})
+                                    ${OpenCV_LIBS})
 
 ### Set library to be installed under lib directory
-install ( TARGETS qcvoperators LIBRARY DESTINATION lib)
+#install ( TARGETS qcvoperators LIBRARY DESTINATION lib)
 
 ### Set header to be installed under include/qcv
 install (FILES ${LIBQCVOperators_HEADERS} DESTINATION include/qcv/operators )

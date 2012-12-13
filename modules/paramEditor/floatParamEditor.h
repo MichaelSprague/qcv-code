@@ -39,6 +39,10 @@
  *******************************************************************************/
 
 /* INCLUDES */
+#ifdef WIN32
+#define _USE_MATH_DEFINES
+#endif
+
 #include "baseParamEditorWidget.h"
 
 #include "floatParam.h"

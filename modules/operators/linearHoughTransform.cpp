@@ -38,7 +38,11 @@
 #include "dbl2DParam.h"
 #include "paramBaseConnector.h"
 #include "linearHoughTransform.h"
- 
+
+#ifdef WIN32
+#define _USE_MATH_DEFINES
+#endif
+
 #include <math.h>
 
 #define NORMALIZE_ANGLE(d) (d)+((d)<0?(((int)(1-(d)/(M_PI)))*(M_PI)):(d)>M_PI?-(((int)((d)/(M_PI)))*(M_PI)):0)

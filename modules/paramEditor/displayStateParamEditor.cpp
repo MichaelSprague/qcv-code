@@ -29,6 +29,10 @@
 ******************************************************************************/
 
 /* INCLUDES */
+#ifdef WIN32
+#include <ciso646>
+#endif
+
 #include "displayStateParamEditor.h"
 
 #include <QSpinBox>

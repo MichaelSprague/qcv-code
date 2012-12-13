@@ -28,6 +28,10 @@
 *****             (C) Hernan Badino 2010 - All Rights Reserved            *****
 ******************************************************************************/
 
+#ifdef WIN32
+#define _USE_MATH_DEFINES
+#endif
+
 #include <stdio.h>
 #include <math.h>
 #include "3DRowVector.h"

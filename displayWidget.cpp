@@ -18,7 +18,13 @@
  * to this license. Do not download, install, copy or use the
  * software, if you do not agree to this license.
  */
+#ifdef WIN32
+#include <ciso646>
+#endif
 
+#if _MSC_VER
+#define snprintf _snprintf
+#endif
 
 #include <Qt>
 #include <QtGui>
@@ -559,7 +565,7 @@ CDisplayWidget::mouseMoved ( CMouseEvent *  f_event_p )
 {
     char str[4096];
 
-    snprintf(str, 4096, "(Display Size: %ix%i) Screen [%i,%i] - Abs Pos [%7.2f,%7.2f] - Scr Pos [%7.2f,%7.2f]\n",
+    sprintf(str, "(Display Size: %ix%i) Screen [%i,%i] - Abs Pos [%7.2f,%7.2f] - Scr Pos [%7.2f,%7.2f]\n",
              m_glDisplay_p->width(),
              m_glDisplay_p->height(),
              f_event_p->displayScreen.x,

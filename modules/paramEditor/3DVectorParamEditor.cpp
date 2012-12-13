@@ -29,6 +29,11 @@
  ******************************************************************************/
 
 /* INCLUDES */
+
+#ifdef WIN32
+#include <ciso646>
+#endif
+
 #include "3DVectorParamEditor.h"
 
 #include <QLabel>

@@ -22,6 +22,7 @@
 #ifndef __CLIPLINE_H
 #define __CLIPLINE_H
 
+#include <algorithm>
 #include <math.h>
 
 /*@@@**************************************************************************
@@ -83,13 +84,13 @@ bool clipLine( float &fr_u1_f, float &fr_v1_f,
 
     if (fabs(f_du_f) < 1.e-6)
     {
-        fr_v1_f = std::max(std::min(fr_v1_f, f_bot_f), f_top_f);
-        fr_v2_f = std::max(std::min(fr_v2_f, f_bot_f), f_top_f);
+        fr_v1_f = (std::max)((std::min)(fr_v1_f, f_bot_f), f_top_f);
+        fr_v2_f = (std::max)((std::min)(fr_v2_f, f_bot_f), f_top_f);
     }
     else if (fabs(f_dv_f) < 1.e-6)
     {
-        fr_u1_f = std::max(std::min(fr_u1_f, f_rig_f), f_lef_f);
-        fr_u2_f = std::max(std::min(fr_u2_f, f_rig_f), f_lef_f);
+        fr_u1_f = (std::max)((std::min)(fr_u1_f, f_rig_f), f_lef_f);
+        fr_u2_f = (std::max)((std::min)(fr_u2_f, f_rig_f), f_lef_f);
     }
     else
     {

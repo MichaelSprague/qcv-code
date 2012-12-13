@@ -53,5 +53,5 @@ target_link_libraries(anaglyphStereo ${QT_LIBRARIES}
 				       ${OpenCV_LIBS})
 
 ### Set binary to be installed under bin directory
-install(TARGETS anaglyphStereo RUNTIME DESTINATION bin)
+#install(TARGETS anaglyphStereo RUNTIME DESTINATION bin)
 

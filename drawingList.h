@@ -54,6 +54,7 @@
 #include "standardTypes.h"
 
 #include <string>
+#include <algorithm>
 
 /* CONSTANTS */
 #define MAX_OVERLAY_LEVELS 3
@@ -536,14 +537,16 @@ namespace QCV
     CDrawingList::getDisplayState ( ) const
     {
         return SDisplayState (m_position, m_visible_b);
-    }
-    
+    }    
 
     inline bool
     CDrawingList::setOverlayLevel ( int f_level_i )
     {
-        m_overlayLevel_i = std::min(std::max(f_level_i, 0), MAX_OVERLAY_LEVELS-1);
-        return true;
+		if (f_level_i < 0 || f_level_i >= MAX_OVERLAY_LEVELS )
+		    return false;
+		m_overlayLevel_i = f_level_i;
+
+		return true;
     }
     
 } // Namespace QCV

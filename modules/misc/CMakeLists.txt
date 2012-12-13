@@ -74,10 +74,10 @@ add_library ( qcvmisc SHARED ${LIBQCVMisc_SRC}
                            ${LIBQCVMisc_HEADERS_MOC} )
 
 target_link_libraries(qcvmisc  ${QT_LIBRARIES} 
-                                    -lglut -lGL ${OpenCV_LIBS})
+                               ${OpenCV_LIBS})
 
 ### Set library to be installed under lib directory
-install ( TARGETS qcvmisc LIBRARY DESTINATION lib)
+#install ( TARGETS qcvmisc LIBRARY DESTINATION lib)
 
 ### Set header to be installed under include/qcv
 install (FILES ${LIBQCVMisc_HEADERS} DESTINATION include/qcv/misc )

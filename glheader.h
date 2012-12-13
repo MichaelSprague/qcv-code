@@ -36,9 +36,7 @@
 #ifdef WIN32
   #include <windows.h>
   #include <GL/gl.h>
-#ifndef QTVISU  
-  #include "glh/glh_extensions.h"
-#endif  
+  #include <GL/glu.h>
 #else
   #define __USE_GLX_SGIX_EXTENSION__
   #define GLX_GLXEXT_PROTOTYPES 1
@@ -50,9 +48,11 @@
 
 
 #ifdef WIN32
-  #include <GL/wglext.h>
+   //#include <glx.h>
+   //#include <GL/wglext.h>
 #else
   #include <GL/glx.h>
+  #include <GL/glut.h>
 #endif
 
 #endif
