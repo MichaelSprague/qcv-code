@@ -75,35 +75,49 @@ include(${QT_USE_FILE})
 ##### SOURCE FILES
 
 set ( LIBQCVOperators_SRC
-     #egoMotionOp.cpp
+     dynProgOp.cpp
      featureStereoOp.cpp
      gfttFreakOp.cpp
-     kltTrackerOp.cpp
      houghTransformOp.cpp
      imgScalerOp.cpp
+     kltTrackerOp.cpp
      linearHoughTransform.cpp
-     #monoEgoMotionOp.cpp
+     roadPlaneDetectionOp.cpp
      sobelOp.cpp
      stereoOp.cpp
      stereoTrackerOp.cpp
      surfOp.cpp
-     voOp.cpp
+
+     #histogramOp.cpp
+     #groundTransEstimation.cpp
+     #egoMotionOp.cpp
+     #monoEgoMotionOp.cpp
+     #voOp.cpp
+     #nriOp.cpp
+     #denseStereoIntegrator.cpp
 )
 
 set ( LIBQCVOperators_HEADERS 
-     #egoMotionOp.h
+     dynProgOp.h
      featureStereoOp.h
      gfttFreakOp.h
-     kltTrackerOp.h
      houghTransformOp.h
      imgScalerOp.h
+     kltTrackerOp.h
      linearHoughTransform.h
-     #monoEgoMotionOp.h
+     roadPlaneDetectionOp.h
      sobelOp.h
      stereoOp.h
      stereoTrackerOp.h
      surfOp.h
-     voOp.h
+
+     #histogramOp.cpp
+     #groundTransEstimation.h
+     #egoMotionOp.h
+     #monoEgoMotionOp.h
+     #voOp.h
+     #nriOp.h
+     #denseStereoIntegrator.h
 )  
 
 set ( LIBQCVOperators_MOC_HEADERS  "" )
